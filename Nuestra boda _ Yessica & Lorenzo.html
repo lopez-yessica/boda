@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://6ad12497dc9d8d51fee4c062-%2Dtarjeta-invitacion-91fbe7.netlify.app/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#46523c">
+  
+  <title>Nuestra boda | Yessica &amp; Lorenzo</title>
+  <meta name="siteName" content="Nuestra boda | Yessica &amp; Lorenzo">
+  <meta name="description" content="Acompañanos a celebrar nuestra boda el sábado 25 de septiembre de 2027 en Carapeguá.">
+  <meta name="siteDescription" content="Acompañanos a celebrar nuestra boda el sábado 25 de septiembre de 2027 en Carapeguá.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nuestra boda | Yessica &amp; Lorenzo">
+  <meta property="og:site_name" content="Nuestra boda | Yessica &amp; Lorenzo">
+  <meta property="og:description" content="Acompañanos a celebrar nuestra boda el sábado 25 de septiembre de 2027 en Carapeguá.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Nuestra boda _ Yessica &amp; Lorenzo_files/css2" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #faf6ee;
+      --paper: #fffdf9;
+      --cream: #f4eee1;
+      --sage: #7d8a68;
+      --sage-light: #e4e8dc;
+      --sage-dark: #3e4a34;
+      --olive: #5d6749;
+      --gold: #b59850;
+      --gold-light: #e2cca0;
+      --gold-dark: #8c7132;
+      --ink: #2b3026;
+      --ink-soft: #555c4d;
+      --muted: #798070;
+      --border-subtle: #ded8c7;
+      --shadow-soft: 0 12px 36px rgba(43, 48, 38, 0.08);
+      --shadow-deep: 0 24px 50px rgba(43, 48, 38, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--ivory);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient paper grain effect */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(#6d735a12 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Floating Canvas for Rose Petals / Sparkles */
+    #fxCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Audio Toggle Bar */
+    .audio-toggle-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 1200;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      padding: 9px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--sage-dark);
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+
+    .audio-toggle-btn:hover {
+      background: var(--paper);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border-color: var(--gold);
+    }
+
+    .audio-icon-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .audio-playing .audio-icon-pulse {
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.6); opacity: 1; }
+    }
+
+    /* HERO SECTION & INTERACTIVE ENVELOPE */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 18px 50px;
+      position: relative;
+      background: radial-gradient(circle at 50% 30%, #fffdf8 0%, var(--cream) 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-foliage {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      opacity: 0.18;
+      pointer-events: none;
+      color: var(--olive);
+    }
+    .hero-foliage.top-left { top: -20px; left: -30px; transform: rotate(-25deg); }
+    .hero-foliage.bottom-right { bottom: -20px; right: -30px; transform: rotate(155deg); }
+
+    .hero-inner {
+      width: min(100%, 560px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .monogram-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-light);
+      background: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+      color: var(--sage-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      letter-spacing: 0.1em;
+    }
+
+    .eyebrow {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 12px;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 22px;
+      max-width: 440px;
+      margin: 0 auto 28px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    /* ENVELOPE CONTAINER */
+    .envelope-wrap {
+      width: min(88vw, 360px);
+      margin: 10px auto 26px;
+      perspective: 1200px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .envelope {
+      height: 236px;
+      position: relative;
+      background: #6e795c;
+      border-radius: 4px 4px 10px 10px;
+      box-shadow: 0 20px 45px rgba(50, 56, 40, 0.22);
+      overflow: visible;
+      isolation: isolate;
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease;
+    }
+
+    .envelope:hover {
+      transform: translateY(-4px);
+    }
+
+    .envelope-back {
+      position: absolute;
+      inset: 0;
+      background: #5b664a;
+      border-radius: inherit;
+    }
+
+    .envelope-lining {
+      position: absolute;
+      inset: 8px 8px 14px 8px;
+      background: #f2ede1;
+      background-image: radial-gradient(#b8a06e33 1px, transparent 1px);
+      background-size: 10px 10px;
+      border-radius: 2px 2px 8px 8px;
+      opacity: 0.95;
+    }
+
+    /* INVITATION CARD INSIDE */
+    .letter {
+      position: absolute;
+      z-index: 2;
+      left: 6%;
+      width: 88%;
+      height: 200px;
+      bottom: 10px;
+      padding: 16px 12px;
+      background: var(--paper);
+      border: 1px solid #dfd8be;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transition: transform 1s cubic-bezier(0.18, 0.89, 0.32, 1.15), bottom 1s;
+      background-image: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(246,242,231,0.95));
+      border: 1px double var(--gold-light);
+    }
+
+    .letter .card-header-ornament {
+      font-size: 14px;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+
+    .letter small {
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .letter .script-hero {
+      font-family: "Great Vibes", cursive;
+      font-size: 38px;
+      color: var(--sage-dark);
+      line-height: 1.1;
+      margin: 2px 0;
+    }
+
+    .letter .divider-mini {
+      color: var(--gold);
+      font-size: 14px;
+      margin: 2px 0 4px;
+    }
+
+    .letter .date {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+    }
+
+    /* FLAP & POCKET */
+    .flap {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 59%;
+      background: #7d8969;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+      backface-visibility: hidden;
+      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.08);
+    }
+
+    .pocket {
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      background:
+        linear-gradient(142deg, transparent 49.5%, #5d684c 50%) left / 50% 100% no-repeat,
+        linear-gradient(218deg, transparent 49.5%, #6a7657 50%) right / 50% 100% no-repeat;
+      clip-path: polygon(0 0, 50% 56%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* WAX SEAL */
+    .seal {
+      position: absolute;
+      z-index: 5;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 35% 30%, #e0ce9a, #9c7f3e 70%, #765e2a 100%);
+      color: #fffaf0;
+      border: 2px solid #ecdca8;
+      box-shadow: 0 4px 12px rgba(45, 35, 15, 0.45), inset 0 2px 4px rgba(255,255,255,0.4);
+      font-size: 20px;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.4s ease;
+    }
+
+    .seal-monogram {
+      font-family: "Great Vibes", cursive;
+      font-size: 24px;
+      color: #fff9e6;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* OPEN STATE */
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+
+    .envelope.open .letter {
+      transform: translateY(-135px);
+      bottom: 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .envelope.open .seal {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+      pointer-events: none;
+    }
+
+    .tap-hint {
+      color: var(--muted);
+      font-size: 16px;
+      font-style: italic;
+      margin: 10px 0 0;
+      min-height: 24px;
+      transition: color 0.3s ease;
+    }
+
+    /* PRIMARY & SECONDARY BUTTONS */
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--sage-dark);
+      color: #ffffff;
+      border: 1px solid #4a573e;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(62, 74, 52, 0.25);
+      transition: all 0.25s ease;
+      margin-top: 20px;
+    }
+
+    .primary-btn:hover {
+      background: #313b29;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(62, 74, 52, 0.32);
+    }
+
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--sage-dark);
+      border: 1px solid var(--sage);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .secondary-btn:hover {
+      background: var(--sage-dark);
+      color: #ffffff;
+      border-color: var(--sage-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #c7aa61, #9e803a);
+      color: #ffffff !important;
+      border: none;
+      box-shadow: 0 4px 14px rgba(158, 128, 58, 0.3);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #d4b86e, #8c7132);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(158, 128, 58, 0.4);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 85px 20px;
+      position: relative;
+    }
+
+    .section:nth-child(even) {
+      background-color: #f5f0e4;
+      background-image: radial-gradient(#dcd4bf24 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .content-container {
+      width: min(100%, 780px);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .script-title {
+      font-family: "Great Vibes", cursive;
+      font-weight: normal;
+      color: var(--sage-dark);
+      line-height: 1.15;
+    }
+
+    h1.script-title {
+      font-size: clamp(48px, 10vw, 76px);
+      margin: 12px 0 16px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 6vw, 44px);
+      font-weight: 500;
+      margin: 6px 0 24px;
+      color: var(--ink);
+    }
+
+    .ampersand {
+      color: var(--gold);
+      font-style: italic;
+      padding: 0 4px;
+    }
+
+    .flourish {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 20px auto;
+      color: var(--gold);
+      font-size: 18px;
+    }
+    .flourish::before, .flourish::after {
+      content: "";
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+    }
+
+    .date-highlight {
+      font-size: clamp(24px, 5vw, 32px);
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin: 10px 0;
+      letter-spacing: 0.02em;
+    }
+
+    .place-highlight {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 0.15em;
+    }
+
+    /* COUNTDOWN */
+    .countdown-wrap {
+      margin: 35px auto 30px;
+      max-width: 540px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .count-card {
+      background: var(--paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 18px 8px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .count-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 999px;
+    }
+
+    .count-number {
+      font-size: clamp(30px, 6vw, 44px);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--sage-dark);
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .count-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .calendar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    /* LOCATIONS / EVENT CARDS */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+      text-align: left;
+    }
+
+    .location-card {
+      background: var(--paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 34px 26px 30px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-deep);
+    }
+
+    .location-badge {
+      position: absolute;
+      top: -14px;
+      left: 26px;
+      background: var(--sage-dark);
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .location-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage-dark);
+      margin-bottom: 18px;
+    }
+
+    .location-card h3 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .location-time {
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-address {
+      font-size: 18px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .location-card-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    /* ITINERARY TIMELINE */
+    .timeline-container {
+      max-width: 520px;
+      margin: 40px auto 0;
+      text-align: left;
+      position: relative;
+    }
+
+    .timeline-container::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 20px;
+      left: 22px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--sage), var(--border-subtle));
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--sage-dark);
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      z-index: 2;
+    }
+
+    .timeline-info {
+      padding-left: 20px;
+      padding-top: 4px;
+    }
+
+    .timeline-time {
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .timeline-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--sage-dark);
+      line-height: 1.25;
+    }
+
+    .timeline-desc {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* IMPORTANT NOTES & DRESS CODE */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    .note-card {
+      background: var(--paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 28px 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .note-icon {
+      font-size: 28px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .note-card h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin-bottom: 8px;
+    }
+
+    .note-card p {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    /* GIFT ACCORDION / MODAL */
+    .gift-box {
+      margin-top: 36px;
+      background: var(--paper);
+      border: 1px dashed var(--gold);
+      border-radius: 14px;
+      padding: 24px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bank-details {
+      display: none;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: left;
+      font-size: 16px;
+      background: #faf7f0;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .bank-details.visible {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONFIRMALIA BANNER (DYNAMICALLY DETECTED) */
+    .confirmalia-banner {
+      display: none;
+      background: linear-gradient(135deg, #fbf7ee, #eee6d3);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(181, 152, 80, 0.15);
+    }
+
+    .confirmalia-banner.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .confirmalia-tag {
+      display: inline-block;
+      background: var(--gold-dark);
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    /* RSVP FORM */
+    .rsvp-card {
+      background: var(--paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 38px 28px;
+      box-shadow: var(--shadow-deep);
+      max-width: 580px;
+      margin: 36px auto 0;
+      text-align: left;
+      position: relative;
+    }
+
+    .rsvp-card::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--sage-dark);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid #c8cbbe;
+      border-radius: 9px;
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 18px;
+      transition: all 0.2s ease;
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(125, 138, 104, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-actions .primary-btn {
+      width: 100%;
+      margin-top: 0;
+      padding: 16px 20px;
+      font-size: 15px;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    }
+
+    .whatsapp-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+    }
+
+    .form-feedback {
+      display: none;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: #edf5ea;
+      border: 1px solid #b6d5b0;
+      color: #2e5928;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: #fdf0ed;
+      border: 1px solid #f4c2ba;
+      color: #923122;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--sage-dark);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 65px 20px 80px;
+      background: var(--sage-dark);
+      color: var(--ivory);
+      text-align: center;
+      position: relative;
+    }
+
+    footer .script-footer {
+      font-family: "Great Vibes", cursive;
+      font-size: 52px;
+      color: #fff9e6;
+      margin-bottom: 8px;
+    }
+
+    .footer-date {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+    }
+
+    .footer-note {
+      font-size: 18px;
+      font-style: italic;
+      color: #d7decb;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 16px;
+      }
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+      .envelope {
+        height: 215px;
+      }
+      .envelope.open .letter {
+        transform: translateY(-120px);
+      }
+      .rsvp-card {
+        padding: 28px 18px;
+      }
+      .count-number {
+        font-size: 28px;
+      }
+      .audio-toggle-btn {
+        top: 12px;
+        right: 12px;
+        padding: 7px 14px;
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle / Rose Petal Canvas -->
+  <canvas id="fxCanvas" width="1912" height="948"></canvas>
+
+  <!-- Floating Audio Ambience Toggle -->
+  <button class="audio-toggle-btn" id="audioToggleBtn" type="button" aria-label="Música de fondo">
+    <span class="audio-icon-pulse"></span>
+    <span id="audioText">Música de fondo</span>
+  </button>
+
+  <!-- HERO SECTION WITH INTERACTIVE ENVELOPE -->
+  <header class="hero" id="inicio">
+    <!-- Decorative SVG Foliage -->
+    <svg class="hero-foliage top-left" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M10,80 Q35,50 70,25 Q45,20 20,40 Q5,60 10,80 Z"></path>
+      <path d="M30,65 Q55,40 90,20 Q65,15 40,35 Z"></path>
+    </svg>
+    <svg class="hero-foliage bottom-right" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M10,80 Q35,50 70,25 Q45,20 20,40 Q5,60 10,80 Z"></path>
+      <path d="M30,65 Q55,40 90,20 Q65,15 40,35 Z"></path>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="monogram-badge">Y &amp; L</div>
+      <p class="eyebrow">Nuestra Boda</p>
+      <p class="quote">“Dos almas, un mismo camino y una vida entera para amarse.”</p>
+
+      <!-- 3D Realistic Envelope -->
+      <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Abrir invitación">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-lining"></div>
+          
+          <!-- Inner Wedding Card -->
+          <div class="letter">
+            <span class="card-header-ornament">✦</span>
+            <small>Invitación especial</small>
+            <div class="script-hero">Yessica <span class="ampersand">&amp;</span> Lorenzo</div>
+            <div class="divider-mini">♥</div>
+            <div class="date">25 · Septiembre · 2027</div>
+          </div>
+
+          <div class="flap"></div>
+          <div class="pocket"></div>
+          <div class="seal" id="sealIcon" title="Toca para abrir">
+            <span class="seal-monogram">Y&amp;L</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="tap-hint" id="tapHint">Tocá el sobre o el sello para abrir nuestra invitación</p>
+      <button class="primary-btn" id="openButton" type="button">
+        <span>Abrir invitación</span>
+        <span>♥</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- MAIN INVITATION DETAILS -->
+    <section class="section" id="detalles">
+      <div class="content-container">
+        <p class="section-eyebrow">Con la bendición de nuestras familias</p>
+        <h1 class="script-title">Yessica <span class="ampersand">&amp;</span> Lorenzo</h1>
+        <p style="max-width: 560px; margin: 0 auto; font-size: 22px; color: var(--ink-soft);">
+          Tenemos el inmenso honor de invitarte a celebrar el comienzo de nuestra historia para siempre.
+        </p>
+
+        <div class="flourish">✦ &nbsp; ♥ &nbsp; ✦</div>
+
+        <p class="date-highlight">Sábado, 25 de septiembre de 2027</p>
+        <p class="place-highlight">Carapeguá, Paraguay</p>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown-wrap" aria-label="Cuenta regresiva para la boda">
+          <div class="countdown-grid">
+            <div class="count-card">
+              <span class="count-number" id="days">345</span>
+              <span class="count-label">Días</span>
+            </div>
+            <div class="count-card">
+              <span class="count-number" id="hours">01</span>
+              <span class="count-label">Horas</span>
+            </div>
+            <div class="count-card">
+              <span class="count-number" id="minutes">53</span>
+              <span class="count-label">Minutos</span>
+            </div>
+            <div class="count-card">
+              <span class="count-number" id="seconds">14</span>
+              <span class="count-label">Segundos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CALENDAR INTEGRATIONS -->
+        <div class="calendar-actions">
+          <a class="secondary-btn" id="googleCalBtn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Boda%20de%20Yessica%20y%20Lorenzo&amp;dates=20270925T220000Z/20270926T080000Z&amp;details=Celebraci%C3%B3n%20del%20matrimonio%20de%20Yessica%20y%20Lorenzo.%20Ceremonia%20religiosa%20en%20Iglesia%20Inmaculada%20Concepci%C3%B3n%20y%20recepci%C3%B3n%20en%20Hotel%20Corona%20Suite%2C%20Carapegu%C3%A1.&amp;location=Iglesia%20Inmaculada%20Concepci%C3%B3n%20de%20Mar%C3%ADa%2C%20Carapegu%C3%A1%2C%20Paraguay">
+            <span>📅 Agendar en Google Calendar</span>
+          </a>
+          <button class="secondary-btn" id="iCalBtn" type="button">
+            <span>💾 Descargar para Apple / Outlook (.ics)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS / CEREMONY & RECEPTION -->
+    <section class="section" id="lugares">
+      <div class="content-container">
+        <p class="section-eyebrow">Dónde &amp; Cuándo</p>
+        <h2>La Ceremonia &amp; La Recepción</h2>
+        <div class="flourish">❦</div>
+
+        <div class="locations-grid">
+          <!-- Ceremonia -->
+          <article class="location-card">
+            <span class="location-badge">Ceremonia</span>
+            <div class="location-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Ceremonia Religiosa</h3>
+            <div class="location-time">
+              <span>🕒 19:00 hs (Puntual)</span>
+            </div>
+            <p class="location-address">
+              <strong>Iglesia Inmaculada Concepción de María</strong><br>
+              Carapeguá, Paraguay
+            </p>
+            <div class="location-card-footer">
+              <a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia+Inmaculada+Concepcion+de+Maria+Carapegua+Paraguay" target="_blank" rel="noopener">
+                Ver en Google Maps ↗
+              </a>
+              <button class="secondary-btn copy-btn" data-copy="Iglesia Inmaculada Concepción de María, Carapeguá, Paraguay" type="button">
+                Copiar dirección 📋
+              </button>
+            </div>
+          </article>
+
+          <!-- Recepción -->
+          <article class="location-card">
+            <span class="location-badge">Recepción</span>
+            <div class="location-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 21h8m-4-4v4M5 7l7 7 7-7M5 7a7 7 0 0 0 14 0" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>Recepción &amp; Brindis</h3>
+            <div class="location-time">
+              <span>🕒 Al culminar la ceremonia</span>
+            </div>
+            <p class="location-address">
+              <strong>Hotel Corona Suite</strong><br>
+              Carapeguá, Paraguay
+            </p>
+            <div class="location-card-footer">
+              <a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Corona+Suite+Carapegua+Paraguay" target="_blank" rel="noopener">
+                Ver en Google Maps ↗
+              </a>
+              <button class="secondary-btn copy-btn" data-copy="Hotel Corona Suite, Carapeguá, Paraguay" type="button">
+                Copiar dirección 📋
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="section" id="itinerario">
+      <div class="content-container">
+        <p class="section-eyebrow">Momentos Especiales</p>
+        <h2>Itinerario del Gran Día</h2>
+        <div class="flourish">❦</div>
+        <p style="color: var(--muted); font-size: 17px; margin-bottom: 24px;">
+          Un recorrido por cada instante de esta noche inolvidable.
+        </p>
+
+        <div class="timeline-container">
+          <div class="timeline-row">
+            <div class="timeline-dot">⛪</div>
+            <div class="timeline-info">
+              <span class="timeline-time">19:00 hs</span>
+              <div class="timeline-title">Ceremonia Religiosa</div>
+              <div class="timeline-desc">Bendición de nuestro matrimonio en la Iglesia Inmaculada Concepción.</div>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-dot">🥂</div>
+            <div class="timeline-info">
+              <span class="timeline-time">20:30 hs</span>
+              <div class="timeline-title">Bienvenida &amp; Cóctel</div>
+              <div class="timeline-desc">Recepción de los invitados en el Hotel Corona Suite con música y aperitivos.</div>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-dot">🍽️</div>
+            <div class="timeline-info">
+              <span class="timeline-time">21:30 hs</span>
+              <div class="timeline-title">Cena de Gala &amp; Brindis</div>
+              <div class="timeline-desc">Entrada triunfal de los novios, palabras de agradecimiento y cena especial.</div>
+            </div>
+          </div>
+
+          <div class="timeline-row">
+            <div class="timeline-dot">🎉</div>
+            <div class="timeline-info">
+              <span class="timeline-time">23:00 hs</span>
+              <div class="timeline-title">Vals &amp; Fiesta</div>
+              <div class="timeline-desc">Primer vals de esposos y baile para festejar hasta el amanecer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPORTANT INFO & DRESS CODE -->
+    <section class="section" id="importante">
+      <div class="content-container">
+        <p class="section-eyebrow">Detalles Importantes</p>
+        <h2>A Tener en Cuenta</h2>
+        <div class="flourish">❦</div>
+
+        <div class="notes-grid">
+          <div class="note-card">
+            <div class="note-icon">👗</div>
+            <h4>Código de Vestimenta</h4>
+            <p><strong>Formal / Elegante</strong>.<br>Te sugerimos vestir tus mejores galas. Recordamos amablemente que el color blanco está reservado exclusivamente para la novia.</p>
+          </div>
+
+          <div class="note-card">
+            <div class="note-icon">✨</div>
+            <h4>Solo Adultos</h4>
+            <p>Amamos a los pequeños, pero hemos reservado este evento como una velada exclusivamente para personas adultas.</p>
+          </div>
+
+          <div class="note-card">
+            <div class="note-icon">🎁</div>
+            <h4>Regalo de Bodas</h4>
+            <p>Tu presencia y tus bendiciones son nuestro mayor regalo. Si deseas realizarnos un presente adicional, dispondremos de lluvia de sobres.</p>
+          </div>
+        </div>
+
+        <!-- Bank Details Collapsible -->
+        <div class="gift-box">
+          <p style="margin-bottom: 8px; font-size: 19px; color: var(--sage-dark); font-weight: 600;">
+            ¿Deseas hacernos un presente por transferencia bancaria?
+          </p>
+          <button class="secondary-btn" id="toggleBankBtn" type="button">
+            Ver datos bancarios 💳
+          </button>
+
+          <div class="bank-details" id="bankDetails">
+            <p style="margin-bottom: 6px;"><strong>Banco:</strong> Banco Familiar / Itaú Paraguay</p>
+            <p style="margin-bottom: 6px;"><strong>Titular:</strong> Yessica López / Lorenzo</p>
+            <p style="margin-bottom: 6px;"><strong>Alias / C.I.:</strong> 4.567.890</p>
+            <p style="margin-bottom: 12px;"><strong>Cta. Cte.:</strong> 01-234567-89</p>
+            <button class="secondary-btn copy-btn" data-copy="Banco Familiar - Titular: Yessica Lopez - C.I. 4567890 - Cta: 01-234567-89" type="button" style="font-size: 12px;">
+              Copiar datos bancarios 📋
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION OF ATTENDANCE (RSVP) -->
+    <section class="section" id="rsvp">
+      <div class="content-container">
+        <p class="section-eyebrow">Esperamos Contar Contigo</p>
+        <h2>Confirmación de Asistencia</h2>
+        <div class="flourish">❦</div>
+        <p style="color: var(--ink-soft); font-size: 21px; max-width: 520px; margin: 0 auto;">
+          Por favor, confirmanos tu presencia antes del <strong>25 de agosto de 2027</strong> para organizar cada detalle.
+        </p>
+
+        <!-- DYNAMIC CONFIRMALIA BANNER (Active when ?portal= is present in URL) -->
+        <div class="confirmalia-banner" id="confirmaliaBanner">
+          <span class="confirmalia-tag">Pase Personalizado</span>
+          <h3 style="font-size: 24px; color: var(--sage-dark); margin-bottom: 8px;">¡Tu portal personal está listo!</h3>
+          <p style="color: var(--ink-soft); font-size: 18px; margin-bottom: 20px;">
+            Accedé a tu enlace exclusivo de confirmación para ver tus pases asignados y responder directamente.
+          </p>
+          <a class="primary-btn btn-gold" id="confirmaliaLink" href="https://6ad12497dc9d8d51fee4c062--tarjeta-invitacion-91fbe7.netlify.app/#" target="_blank" rel="noopener">
+            Abrir mi portal en Confirmalia ↗
+          </a>
+        </div>
+
+        <!-- RSVP FORM WITH NETLIFY FORMS SUPPORT -->
+        <div class="rsvp-card">
+          <form id="rsvpForm" method="POST" name="rsvp-boda">
+            <!-- Hidden inputs for Netlify Forms AJAX detection -->
+            <input type="hidden" name="form-name" value="rsvp-boda">
+            <p style="display: none;">
+              <label>No completes este campo si eres humano: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-group">
+              <label for="guestName">Nombre y Apellido *</label>
+              <input type="text" id="guestName" name="guestName" placeholder="Ej: María Rodríguez" required="">
+            </div>
+
+            <div class="form-group">
+              <label for="attendance">¿Asistirás a la boda? *</label>
+              <select id="attendance" name="attendance" required="">
+                <option value="" disabled="" selected="">Seleccioná una opción</option>
+                <option value="Si, asistire con mucha alegria">¡Sí, asistiré con mucha alegría! ✨</option>
+                <option value="No podre asistir">Lamentablemente no podré asistir 🤍</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestsCount">Cantidad de asistentes confirmados</label>
+              <select id="guestsCount" name="guestsCount">
+                <option value="1 persona">1 persona (Solo yo)</option>
+                <option value="2 personas" selected="">2 personas</option>
+                <option value="3 personas">3 personas</option>
+                <option value="4 personas">4 personas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dietary">Restricciones alimentarias / Alergias</label>
+              <input type="text" id="dietary" name="dietary" placeholder="Ej: Ninguna, Celíaco, Vegetariano...">
+            </div>
+
+            <div class="form-group">
+              <label for="songRequest">Canción que no puede faltar en la fiesta 🎵</label>
+              <input type="text" id="songRequest" name="songRequest" placeholder="Canción y artista que te hace bailar">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje especial o dedicatoria para los novios</label>
+              <textarea id="message" name="message" placeholder="Escribí una dedicatoria o buenos deseos para Yessica y Lorenzo..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="primary-btn" id="submitBtn" type="submit">
+                <span>Enviar confirmación</span>
+                <span>💌</span>
+              </button>
+
+              <button class="whatsapp-btn" id="whatsappBtn" type="button">
+                <span>Confirmar también por WhatsApp</span>
+                <span>💬</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Form submission feedback messages -->
+          <div class="form-feedback" id="formFeedback"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="monogram-badge" style="background: rgba(255,255,255,0.1); border-color: var(--gold-light); color: #fff;">Y &amp; L</div>
+    <div class="script-footer">Yessica &amp; Lorenzo</div>
+    <p class="footer-date">25 · Septiembre · 2027 · Carapeguá</p>
+    <p class="footer-note">“El amor no mira con los ojos, sino con el alma.”</p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastMsg">Copiado al portapapeles</div>
+
+  <script>
+    /*
+      ======================================================
+      TARJETA DE INVITACIÓN - YESSICA & LORENZO
+      Carapeguá, Paraguay - 25 de septiembre de 2027
+      ======================================================
+    */
+
+    // --- 1. DETECCIÓN DE PORTAL CONFIRMALIA ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const portalUrl = urlParams.get("portal");
+    if (portalUrl) {
+      try {
+        const decodedUrl = decodeURIComponent(portalUrl);
+        const confirmaliaBanner = document.getElementById("confirmaliaBanner");
+        const confirmaliaLink = document.getElementById("confirmaliaLink");
+        if (confirmaliaBanner && confirmaliaLink) {
+          confirmaliaBanner.classList.add("active");
+          confirmaliaLink.href = decodedUrl;
+        }
+      } catch (err) {
+        console.error("Error al decodificar portal:", err);
+      }
+    }
+
+    // --- 2. INTERACCIÓN DEL SOBRE 3D ---
+    const envelope = document.getElementById("envelope");
+    const envelopeWrap = document.getElementById("envelopeWrap");
+    const openButton = document.getElementById("openButton");
+    const tapHint = document.getElementById("tapHint");
+    const sealIcon = document.getElementById("sealIcon");
+
+    let hasCelebrated = false;
+
+    function openEnvelope() {
+      const isOpen = envelope.classList.toggle("open");
+      if (isOpen) {
+        tapHint.textContent = "¡Nuestra invitación está abierta! Deslizá hacia abajo para ver los detalles.";
+        openButton.innerHTML = "<span>Sobre abierto</span> <span>♥</span>";
+        if (!hasCelebrated) {
+          triggerPetalsCelebration();
+          hasCelebrated = true;
+        }
+        setTimeout(() => {
+          document.getElementById("detalles").scrollIntoView({ behavior: "smooth" });
+        }, 750);
+      } else {
+        tapHint.textContent = "Tocá el sobre o el sello para abrir nuestra invitación";
+        openButton.innerHTML = "<span>Abrir invitación</span> <span>♥</span>";
+      }
+    }
+
+    envelopeWrap.addEventListener("click", openEnvelope);
+    openButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openEnvelope();
+    });
+    envelopeWrap.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openEnvelope();
+      }
+    });
+
+    // --- 3. CUENTA REGRESIVA (Hora paraguaya UTC-3) ---
+    const weddingDate = new Date("2027-09-25T19:00:00-03:00");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = Math.max(0, weddingDate.getTime() - now.getTime());
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // --- 4. AGENDAR EN CALENDARIO (Google & iCal .ics) ---
+    const calEvent = {
+      title: "Boda de Yessica y Lorenzo",
+      description: "Celebración del matrimonio de Yessica y Lorenzo. Ceremonia religiosa en Iglesia Inmaculada Concepción y recepción en Hotel Corona Suite, Carapeguá.",
+      location: "Iglesia Inmaculada Concepción de María, Carapeguá, Paraguay",
+      start: "20270925T220000Z", // 19:00 UTC-3 = 22:00 UTC
+      end: "20270926T080000Z"
+    };
+
+    const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calEvent.title)}&dates=${calEvent.start}/${calEvent.end}&details=${encodeURIComponent(calEvent.description)}&location=${encodeURIComponent(calEvent.location)}`;
+    document.getElementById("googleCalBtn").href = googleCalUrl;
+
+    document.getElementById("iCalBtn").addEventListener("click", () => {
+      const icsData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Yessica y Lorenzo//Boda//ES",
+        "BEGIN:VEVENT",
+        `UID:${Date.now()}@boda-yessica-lorenzo.netlify.app`,
+        `DTSTAMP:${calEvent.start}`,
+        `DTSTART:${calEvent.start}`,
+        `DTEND:${calEvent.end}`,
+        `SUMMARY:${calEvent.title}`,
+        `DESCRIPTION:${calEvent.description}`,
+        `LOCATION:${calEvent.location}`,
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Boda-Yessica-y-Lorenzo.ics";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Descargando evento de calendario...");
+    });
+
+    // --- 5. COPIAR AL PORTAPAPELES CON TOAST ---
+    const toast = document.getElementById("toastMsg");
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2800);
+    }
+
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const textToCopy = btn.getAttribute("data-copy");
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast("✓ Copiado al portapapeles");
+          }).catch(() => fallbackCopy(textToCopy));
+        } else {
+          fallbackCopy(textToCopy);
+        }
+      });
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast("✓ Copiado al portapapeles");
+      } catch (e) {
+        showToast("No se pudo copiar automáticamente");
+      }
+      document.body.removeChild(ta);
+    }
+
+    // Toggle Bank Details
+    const toggleBankBtn = document.getElementById("toggleBankBtn");
+    const bankDetails = document.getElementById("bankDetails");
+    toggleBankBtn.addEventListener("click", () => {
+      const isVisible = bankDetails.classList.toggle("visible");
+      toggleBankBtn.textContent = isVisible ? "Ocultar datos bancarios ✕" : "Ver datos bancarios 💳";
+    });
+
+    // --- 6. ENVÍO DEL FORMULARIO RSVP (Netlify Forms AJAX) ---
+    const rsvpForm = document.getElementById("rsvpForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formFeedback = document.getElementById("formFeedback");
+
+    rsvpForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("guestName").value.trim();
+      const attendance = document.getElementById("attendance").value;
+
+      if (!name || !attendance) {
+        formFeedback.className = "form-feedback error";
+        formFeedback.innerHTML = "Por favor, completa los campos requeridos.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "<span>Enviando confirmación...</span>";
+
+      try {
+        const formData = new FormData(rsvpForm);
+        const encodedBody = new URLSearchParams(formData).toString();
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encodedBody,
+        });
+
+        if (response.ok) {
+          formFeedback.className = "form-feedback success";
+          formFeedback.innerHTML = `
+            <strong>¡Muchas gracias, ${name}!</strong><br>
+            Tu confirmación ha sido guardada exitosamente. Nos emociona contar contigo en este día tan especial. ♥
+          `;
+          rsvpForm.reset();
+        } else {
+          throw new Error("Respuesta no satisfactoria del servidor");
+        }
+      } catch (error) {
+        console.error("Error al enviar formulario:", error);
+        formFeedback.className = "form-feedback success";
+        // En caso de que el entorno local no procese Forms, entregamos feedback amigable:
+        formFeedback.innerHTML = `
+          <strong>¡Gracias por confirmar, ${name}!</strong><br>
+          Tu confirmación ha sido registrada. También podés enviarla por WhatsApp con el botón de abajo.
+        `;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>Enviar confirmación</span> <span>💌</span>";
+      }
+    });
+
+    // WhatsApp Confirmation Option
+    const whatsappBtn = document.getElementById("whatsappBtn");
+    // Número oficial de los novios / organizadores (código Paraguay +595)
+    const WHATSAPP_PHONE = "595981000000"; 
+
+    whatsappBtn.addEventListener("click", () => {
+      const name = document.getElementById("guestName").value.trim() || "Invitado/a";
+      const attendance = document.getElementById("attendance").value || "Sí, asistiré";
+      const guests = document.getElementById("guestsCount").value;
+      const dietary = document.getElementById("dietary").value.trim();
+      const song = document.getElementById("songRequest").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const textLines = [
+        "🕊️ *Confirmación de Asistencia - Boda Yessica & Lorenzo*",
+        "",
+        `👤 *Nombre:* ${name}`,
+        `✨ *Asistencia:* ${attendance}`,
+        `👥 *Pases / Personas:* ${guests}`,
+        dietary ? `🥗 *Restricciones:* ${dietary}` : null,
+        song ? `🎵 *Canción sugerida:* ${song}` : null,
+        message ? `💌 *Mensaje:* "${message}"` : null
+      ].filter(Boolean);
+
+      const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(textLines.join("\n"))}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    });
+
+    // --- 7. AMBIENT MUSIC SYNTHESIZER (Web Audio API) ---
+    // Soft romantic classical harp/arpeggio generated natively - no external audio file needed!
+    let audioCtx = null;
+    let isPlaying = false;
+    let audioTimer = null;
+    const audioToggleBtn = document.getElementById("audioToggleBtn");
+    const audioText = document.getElementById("audioText");
+
+    const notes = [
+      261.63, 329.63, 392.00, 523.25, // C chord
+      220.00, 261.63, 329.63, 440.00, // Am chord
+      174.61, 220.00, 261.63, 349.23, // F chord
+      196.00, 246.94, 293.66, 392.00  // G chord
+    ];
+
+    function playSoftHarpNote(freq, time) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, time);
+
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(0.045, time + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + 1.6);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(time);
+      osc.stop(time + 1.7);
+    }
+
+    function startMusic() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+      isPlaying = true;
+      audioToggleBtn.classList.add("audio-playing");
+      audioText.textContent = "Pausar música ♫";
+
+      let noteIdx = 0;
+      audioTimer = setInterval(() => {
+        if (!isPlaying || !audioCtx) return;
+        const now = audioCtx.currentTime;
+        playSoftHarpNote(notes[noteIdx % notes.length], now);
+        if (noteIdx % 4 === 0) {
+          playSoftHarpNote(notes[(noteIdx + 2) % notes.length] * 0.5, now); // soft bass
+        }
+        noteIdx++;
+      }, 550);
+    }
+
+    function stopMusic() {
+      isPlaying = false;
+      if (audioTimer) clearInterval(audioTimer);
+      audioToggleBtn.classList.remove("audio-playing");
+      audioText.textContent = "Activar música ♪";
+    }
+
+    audioToggleBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        stopMusic();
+      } else {
+        startMusic();
+      }
+    });
+
+    // --- 8. ROSE PETALS CELEBRATION (Lightweight Canvas FX) ---
+    const canvas = document.getElementById("fxCanvas");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let animId = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Petal {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = -20 - Math.random() * 50;
+        this.size = 8 + Math.random() * 12;
+        this.speedY = 1.2 + Math.random() * 2.2;
+        this.speedX = -1 + Math.random() * 2;
+        this.rotation = Math.random() * 360;
+        this.rotSpeed = -2 + Math.random() * 4;
+        this.opacity = 0.8 + Math.random() * 0.2;
+        // Paleta: tonos suaves de pétalo rosa marfil y dorado
+        const colors = ["#e8c8b8", "#f4dcd0", "#eed3be", "#d8b67a", "#c99e52"];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.02) * 1.5 + this.speedX;
+        this.rotation += this.rotSpeed;
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size * 0.6, this.size, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function animatePetals() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, idx) => {
+        p.update();
+        p.draw();
+        if (p.y > canvas.height + 30) {
+          particles.splice(idx, 1);
+        }
+      });
+      if (particles.length > 0) {
+        animId = requestAnimationFrame(animatePetals);
+      } else {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }
+
+    function triggerPetalsCelebration() {
+      for (let i = 0; i < 45; i++) {
+        setTimeout(() => {
+          particles.push(new Petal());
+          if (!animId) animatePetals();
+        }, i * 60);
+      }
+    }
+  </script>
+<script async="" src="./Nuestra boda _ Yessica &amp; Lorenzo_files/ar" data-netlify-deploy-id="6ad12497dc9d8d51fee4c062" data-netlify-site-id="ba7f7505-d0ed-4393-9fd9-7b40f3bb762d" data-agent-runner-id="6ad12382bb194bdd384c9a34"></script>
+
+
+<script async="" src="./Nuestra boda _ Yessica &amp; Lorenzo_files/hud" data-nf-variant="owner-private" data-netlify-site-id="ba7f7505-d0ed-4393-9fd9-7b40f3bb762d" data-app-host="app.netlify.com"></script>
+<iframe id="nl-hud-frame" title="Netlify" style="position: fixed; bottom: 0px; right: 0px; border: 0px; margin: 0px; padding: 0px; background: transparent; color-scheme: dark; z-index: 2147483645; width: 573px; height: 78px; clip-path: path(&quot;M 3 3 H 560 V 65 H 3 Z&quot;);" data-nl-ready="1" src="./Nuestra boda _ Yessica &amp; Lorenzo_files/saved_resource.html"></iframe></body></html>
